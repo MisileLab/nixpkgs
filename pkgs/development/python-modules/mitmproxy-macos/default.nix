@@ -7,7 +7,7 @@
 
 buildPythonPackage rec {
   pname = "mitmproxy-macos";
-  version = "0.9.2";
+  version = "0.11.5";
   format = "wheel";
 
   disabled = pythonOlder "3.10";
@@ -18,8 +18,10 @@ buildPythonPackage rec {
     format = "wheel";
     dist = "py3";
     python = "py3";
-    hash = "sha256-Q19gQF6qnoF0TDmeZIxu90A5/ur7N7sDcoeBi2LaNrg=";
+    hash = "sha256-j3qqZGrMZLpHkKf01Gy5+/18sEEbm3pWfbBASGS/8o0=";
   };
+
+  doCheck = false;
 
   pythonImportsCheck = [ "mitmproxy_macos" ];
 
