@@ -11,24 +11,24 @@
   xz,
   replaceVars,
   # for passthru.tests:
-  edgedb,
+  gel,
   testers,
 }:
 rustPlatform.buildRustPackage rec {
-  pname = "edgedb";
-  version = "6.1.2";
+  pname = "gel";
+  version = "7.0.2";
 
   src = fetchFromGitHub {
-    owner = "edgedb";
-    repo = "edgedb-cli";
+    owner = "geldata";
+    repo = "gel-cli";
     tag = "v${version}";
-    hash = "sha256-7epi7cF6u3Y/Fomcd1+lQfIIRKzuqL6Qk3gTZGZnjv8=";
+    hash = "sha256-SJiwvsLTiMlRwwZlDnU7Jxe0FnThmu8jXCbeNL+2uwk=";
     fetchSubmodules = true;
   };
 
   cargoDeps = rustPlatform.fetchCargoVendor {
     inherit pname version src;
-    hash = "sha256-Iq960LU3Xxu5LHBENsZ48diPVJrdTHxtChtSp7yghCw=";
+    hash = "sha256-YUsPi3enOI7/Uh9Cb0UCuOKFfH03RAq4Cc5zuRQ8CUw=";
   };
 
   nativeBuildInputs = [
@@ -63,12 +63,12 @@ rustPlatform.buildRustPackage rec {
   doCheck = false;
 
   passthru.tests.version = testers.testVersion {
-    package = edgedb;
+    package = gel;
     command = "edgedb --version";
   };
 
   meta = {
-    description = "EdgeDB cli";
+    description = "Gel cli";
     homepage = "https://www.edgedb.com/docs/cli/index";
     license = with lib.licenses; [
       asl20
