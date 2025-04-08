@@ -24,17 +24,17 @@ in
 
 rustPlatform.buildRustPackage rec {
   pname = "rustup";
-  version = "1.27.1";
+  version = "1.28.1";
 
   src = fetchFromGitHub {
     owner = "rust-lang";
     repo = "rustup";
     rev = version;
-    sha256 = "sha256-BehkJTEIbZHaM+ABaWN/grl9pX75lPqyBj1q1Kt273M=";
+    sha256 = "sha256-hJp7vkVp6hfNGfqhU411lwVVeYntriUTCq7foqstzqQ=";
   };
 
   useFetchCargoVendor = true;
-  cargoHash = "sha256-CQHpsOGofDqsbLLTcznu5a0MSthJgy27HjBk8AYA72s=";
+  cargoHash = "sha256-ohHuhw/8ib/t4ZHnr5vHet+f/LD2PP2+Rk9KUOZhSF8=";
 
   nativeBuildInputs = [
     makeBinaryWrapper
