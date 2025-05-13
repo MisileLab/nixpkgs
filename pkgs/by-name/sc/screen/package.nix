@@ -10,7 +10,7 @@
 
 stdenv.mkDerivation rec {
   pname = "screen";
-  version = "5.0.0";
+  version = "5.0.1";
 
   src = fetchurl {
     url = "mirror://gnu/screen/screen-${version}.tar.gz";
